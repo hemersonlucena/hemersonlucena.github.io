@@ -1,0 +1,178 @@
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Hemerson Lucena">
+  <title>Hemerson Lucena | Legonautas</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="/css/master.css?ver=0.9">
+</head>
+<body>
+  <div class="container">
+
+    <div class="section header">
+      <h1>Hemerson Lucena</h1>
+      <div class="menu">
+        <ul>
+          <li><a href="/">home</a></li>
+          <!-- <li><a href="/projects/">projects</a></li> -->
+          <li><a href="/about/">about</a></li>
+        </ul>
+      </div>
+    </div>
+      <div class="section medida-section">
+        <h2>Insira os valores medidos no EV3</h2>
+        <h3>Medida 01</h3>
+        <table>
+          <tr>
+            <td>Fita preta</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Branco</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Vigas vermelhas</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Vigas azuis</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Vigas amarelas</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Fita verde</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Fita cinza</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+        </table>
+      </div>
+      <div class="section medida-section">
+        <h3>Medida 02</h3>
+        <table>
+          <tr>
+            <td>Fita preta</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Branco</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Vigas vermelhas</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Vigas azuis</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Vigas amarelas</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Fita verde</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+          <tr>
+            <td>Fita cinza</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+            <td><input class="input-rgb" type="number" min="0" max="255"</td>
+          </tr>
+        </table>
+        <button type="button" onclick="exportar();">Copiar dados</button>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+  let documentInputs = document.getElementsByClassName('input-rgb');
+
+
+  function exportar(){
+    // scan through the document inputs and create an array with
+    // their values
+    let values = [];
+    for (var i = 0; i < documentInputs.length; i++) {
+      values.push(documentInputs[i].value);
+    }
+
+    let csvOutput = formatToCSV(values);
+
+    doCopy(csvOutput);
+  }
+
+  function formatToCSV(dataArray) {
+    let output = "";
+    const headers = ["\n\nINÍCIO DA AMOSTRA\nFita preta", "Branco", "Vermelhas",
+    "Azuis", "Amarelas", "Fita verde", "Fita cinza"];
+
+    for (var i = 0; i < dataArray.length; i++) {
+      if (i%3 === 0){
+        output += headers[i%(3*headers.length)/3] + ";";
+      }
+      output += dataArray[i];
+      if (!((i+1)%3 === 0)) {
+        output += ";";
+      }else {
+        output += "\n";
+      }
+    }
+
+    return output.replace(/^\s*/, '');
+  }
+
+
+  function isChildOf(child, parent){
+    if (child.parentNode == parent) return true;
+
+    if(child.parentNode.nodeName == "BODY") return false;
+
+    return isChildOf(child.parentNode, parent);
+  }
+
+  function doCopy(str){
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Texto copiado');
+  }
+  </script>
+</body>
+</html>
