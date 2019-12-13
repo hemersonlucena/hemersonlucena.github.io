@@ -31,8 +31,14 @@ function updatePlayerPos(fromMine = false, mineIndexes = [0, 0]){
 		playerPos.y = mine.y;
 		playerPos.z = mine.z;
 	}else{
-		playerPos.x = parseInt(document.getElementById("charPos").value.split(" ")[0]);
-		playerPos.z = parseInt(document.getElementById("charPos").value.split(" ")[1]);
+		let playerPosString = document.getElementById("charPos").value;
+		playerPosString = playerPosString.replace(/([^0-9]*)(\d+)([^0-9]+)(\d+)([^0-9]*)(\d*)(.*)/, "$2 $4 $6");
+		playerPos.x = parseInt(playerPosString.split(" ")[0]);
+
+		let newPLayerHeight = parseInt(playerPosString.split(" ")[2]);
+		playerPos.y = newPLayerHeight > 0 ? newPLayerHeight : playerPos.y;
+
+		playerPos.z = parseInt(playerPosString.split(" ")[1]);
 	}
 
 }
@@ -78,7 +84,11 @@ function startCollecting(){
 
 function setTaken(mineIndexes){
 	resourcesData[mineIndexes[0]].mines[mineIndexes[1]].isTaken = true;
-	// TODO: set timeout to respawn.
+	setTimeout(setNotTaken, 600000, mineIndexes);
+}
+
+function setNotTaken(mineIndexes){
+	resourcesData[mineIndexes[0]].mines[mineIndexes[1]].isTaken = false;
 }
 
 function gotIt(){
@@ -88,9 +98,6 @@ function gotIt(){
 	nextMineIndexes = getTheClosestOne(playerPos.x, playerPos.z);
 	updatePageDiv(nextMineIndexes);
 	currentMineIndexes = nextMineIndexes;
-
-	console.log("DONE!");
-	console.log(currentMineIndexes);
 }
 
 // MAIN
